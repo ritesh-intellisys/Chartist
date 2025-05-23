@@ -23,6 +23,10 @@
   margin-bottom: 2rem;
   background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  display: flex;
   -webkit-text-fill-color: transparent;
 }
 
