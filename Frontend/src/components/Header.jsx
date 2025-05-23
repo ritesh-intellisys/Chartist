@@ -4,7 +4,7 @@ import { FiSettings, FiSun, FiMoon, FiUser, FiLock, FiMenu, FiX } from 'react-ic
 import { auth } from '../firebase';
 import clsx from 'clsx';
 import './Header.css';
-import Logo from '../assets/Logo.png'; // Adjust the path to your logo
+import Logo from '../assets/Logo22.png'; // Adjust the path to your logo
 
 function Header({ theme, toggleTheme, isAdminAuthenticated, setIsAdminAuthenticated }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

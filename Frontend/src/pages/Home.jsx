@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiChevronDown } from 'react-icons/fi';
 import './Home.css';
 import TickerTape from '../charts/TickerTape';
+import CountdownPopup from '../components/CountdownPopup';
 
 // import video1 from '../assets/SMC-D4.mp4';
 // import video2 from '../assets/basics-of-stock-market-D1.mp4';
@@ -29,6 +30,15 @@ function Home() {
   const [openFaqId, setOpenFaqId] = useState(null);
   const [hoveredVideo, setHoveredVideo] = useState(null); // Track hovered video
   const [videoTimeout, setVideoTimeout] = useState(null); // Track timeout for video stop
+
+
+  const [showCountdown, setShowCountdown] = useState(false);
+
+  useEffect(() => {
+    // Show countdown when component mounts
+    setShowCountdown(true);
+  }, []);
+
 
   const bots = [
     { 
@@ -219,6 +229,7 @@ function Home() {
 
   return (
     <div className="home">
+      {showCountdown && <CountdownPopup onClose={() => setShowCountdown(false)} />}
       {/* Bot Selection */}
       <section className="bot-selection">
         {bots.map(bot => (
@@ -259,8 +270,8 @@ function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              onMouseEnter={() => handleMouseEnter(video.videoUrl)}
-              onMouseLeave={handleMouseLeave}
+              // onMouseEnter={() => handleMouseEnter(video.videoUrl)}
+              // onMouseLeave={handleMouseLeave}
             >
               <div className="video-wrapper">
                 {hoveredVideo === video.videoUrl ? (

@@ -12,6 +12,7 @@
   "dependencies": {
     "aos": "^2.3.4",
     "axios": "^1.8.4",
+    "canvas-confetti": "^1.9.3",
     "clsx": "^2.1.0",
     "firebase": "^10.8.1",
     "framer-motion": "^11.0.8",
